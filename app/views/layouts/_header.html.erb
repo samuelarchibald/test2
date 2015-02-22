@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'About', about_path %></li>
-        <li><a href="#">Nominations</a></li>
+        <li><%= link_to 'Nominations', apps_path %></li>
         <li><%= link_to 'Judging', judging_path %></li>
         <li><%= link_to 'Winners', winners_path %></li>
       </ul>
@@ -23,7 +23,7 @@
 
       <ul class="nav navbar-nav navbar-right">
 
-        
+        <li><%= link_to 'Nominate My App', new_app_path %></li>
 
         <% if user_signed_in? %>
           <li class="dropdown">
@@ -40,7 +40,7 @@
             <li><%= link_to 'Sign Up', new_user_registration_path %></li>
             <li><%= link_to 'Log In', new_user_session_path %></li>
         <% end %>
-				<li><a href="#">Nominate My App</a></li>
+				
       </ul> <!-- navbar-right END -->
 
 
