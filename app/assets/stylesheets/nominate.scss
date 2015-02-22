@@ -1,0 +1,36 @@
+.apps {
+	margin-top:70px;
+	.app {
+		width:30%;
+		margin:10px;
+		@media (max-width: 813px) {
+			width:100%;
+			display: block;
+			margin:0 auto !important;
+		}
+		float:left;
+		.app-each {
+			width:250px;
+			margin: 10px auto;
+			padding:5px;
+			background-color: #ccc;
+			border-radius: 10px;
+			.pic {
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+				height:150px;
+				width:100%;
+				background-color: #aaa;
+				margin-bottom: 10px;
+			}
+			.name {
+				font-size: 22px;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.center {
+	text-align: center;
+}
