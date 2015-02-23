@@ -20,5 +20,9 @@
   <%= @app.description %>
 </p>
 
-<%= link_to 'Edit', edit_app_path(@app) %> |
-<%= link_to 'Back', apps_path %>
+
+<% if @app.user == current_user %>
+	<%= link_to 'Edit', edit_app_path(@app) %> |
+<% end %>
+
+	<%= link_to 'Back', apps_path %>

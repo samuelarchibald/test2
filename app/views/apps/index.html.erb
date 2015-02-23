@@ -8,6 +8,7 @@
       <div class="app-each">
         <div class="pic">&nbsp</div>
         <div class="name"><%= app.name %></div>
+        <div class="item description"><%= app.user.email if app.user %></div>
         <div class="info">
           <div class="item store">
               Store: 
@@ -17,12 +18,15 @@
               URL: 
             <%= app.url %>
           </div>
+
           <div class="item description"><%= app.description %></div> 
           <div class="item show"><%= link_to 'Show', app %></div> 
-          <div class="item edit"><%= link_to 'Edit', edit_app_path(app) %></div> 
-          <div class="item destroy">
-            <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div> 
+          <% if app.user == current_user %>
+            <div class="item edit"><%= link_to 'Edit', edit_app_path(app) %></div> 
+            <div class="item destroy">
+              <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div> 
+          <% end %>
         </div>
         </div>
     </div>
