@@ -5,7 +5,7 @@ class CreateApps < ActiveRecord::Migration
       t.string :store
       t.string :url
       t.string :description
-
+      #rails generate migration AddUserIdToApps
       t.timestamps null: false
     end
   end

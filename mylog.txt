@@ -1,0 +1,141 @@
+Run options: --seed 23938
+
+# Running:
+
+EEEEEEEEEEE
+
+Finished in 0.017331s, 634.7008 runs/s, 0.0000 assertions/s.
+
+  1) Error:
+JudgingControllerTest#test_should_get_index:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+JudgingControllerTest#test_should_get_index:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  2) Error:
+WinnersControllerTest#test_should_get_index:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+WinnersControllerTest#test_should_get_index:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  3) Error:
+UserTest#test_the_truth:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+
+  4) Error:
+AppTest#test_the_truth:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+
+  5) Error:
+AppsControllerTest#test_should_get_edit:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_get_edit:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  6) Error:
+AppsControllerTest#test_should_update_app:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_update_app:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  7) Error:
+AppsControllerTest#test_should_destroy_app:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_destroy_app:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  8) Error:
+AppsControllerTest#test_should_get_index:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_get_index:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+  9) Error:
+AppsControllerTest#test_should_get_new:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_get_new:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 10) Error:
+AppsControllerTest#test_should_create_app:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_create_app:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+
+ 11) Error:
+AppsControllerTest#test_should_show_app:
+ActiveRecord::Fixture::FormatError: a YAML error occurred parsing /Users/samuelclark/Desktop/sam_own/test2/test/fixtures/users.yml. Please note that YAML must be consistently indented using spaces. Tabs are not allowed. Please have a look at http://www.yaml.org/faq.html
+The exact error was:
+  Psych::SyntaxError: (<unknown>): found character that cannot start any token while scanning for the next token at line 8 column 1
+    
+
+Error:
+AppsControllerTest#test_should_show_app:
+NoMethodError: undefined method `each' for nil:NilClass
+    
+
+11 runs, 0 assertions, 0 failures, 11 errors, 0 skips
