@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<div class="container down">
 
 <p>
   <strong>Name:</strong>
@@ -16,6 +16,10 @@
 </p>
 
 <p>
+  <%= image_tag @app.image.url(:medium) %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @app.description %>
 </p>
@@ -26,3 +30,5 @@
 <% end %>
 
 	<%= link_to 'Back', apps_path %>
+
+</div>

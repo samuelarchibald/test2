@@ -6,7 +6,9 @@
 <% @apps.each do |app| %>
     <div class="app">
       <div class="app-each">
-        <div class="pic">&nbsp</div>
+        <div class="pic">
+          <%= image_tag app.image.url(:medium) %>
+        </div>
         <div class="name"><%= app.name %></div>
         <div class="item description"><%= app.user.email if app.user %></div>
         <div class="info">
