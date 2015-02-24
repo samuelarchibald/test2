@@ -1,37 +1,22 @@
 
-<div class="apps container">
-<h1 class="center">Nominations</h1>
-
-<h3>Most Recent Apps</h3>
-<% @apps.each do |app| %>
-    <div class="app">
-      <div class="app-each">
-        <div class="pic">
-          <%= image_tag app.image.url(:medium) %>
-        </div>
-        <div class="name"><%= app.name %></div>
-        <div class="item description"><%= app.user.email if app.user %></div>
-        <div class="info">
-          <div class="item store">
-              Store: 
-              <%= app.store %>
-          </div> 
-          <div class="item url">
-              URL: 
-            <%= app.url %>
-          </div>
-
-          <div class="item description"><%= app.description %></div> 
-          <div class="item show"><%= link_to 'Show', app %></div> 
-          <% if app.user == current_user %>
-            <div class="item edit"><%= link_to 'Edit', edit_app_path(app) %></div> 
-            <div class="item destroy">
-              <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div> 
-          <% end %>
-        </div>
-        </div>
+<div id="apps" class="transitions-enabled">
+  <% @apps.each do |app| %>
+    <div class="box panel panel-default">
+      <%= image_tag app.image.url(:medium) %>
+      <div class="panel-body">
+        <%= app.name %>
+        <%= app.user.email %>
+        <%= app.store %>
+        <%= app.url %>
+        <%= app.description %>
+      </div>
+      <div class="panel-footer">
+        <%= link_to 'Show', app %>
+        <% if app.user == current_user %>
+          <%= link_to 'Edit', edit_app_path(app) %>
+          <%= link_to 'Destroy', app, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     </div>
-<% end %>
-
+  <% end %>
 </div>

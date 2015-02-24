@@ -65,7 +65,7 @@ class AppsController < ApplicationController
 
     def correct_user
       @app = current_user.apps.find_by(id: params[:id])
-      redirect_to apps_path, notice: "not autorized to edit this pin" if @app.nil?
+      redirect_to apps_path, notice: "not autorized to edit this app" if @app.nil?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
