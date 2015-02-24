@@ -5,7 +5,7 @@
       <%= image_tag app.image.url(:medium) %>
       <div class="panel-body">
         <%= app.name %>
-        <%= app.user.email %>
+        <%= app.user.email if app.user %>
         <%= app.store %>
         <%= app.url %>
         <%= app.description %>
