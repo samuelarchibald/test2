@@ -1,10 +1,12 @@
 <div class="container">
 
   <%= form_for @app, html: { multipart: true } do |f| %>
+  <!-- stripe javascript tag -->
+  
+
     <% if @app.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
-
         <ul>
         <% @app.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -33,9 +35,30 @@
       <%= f.label :description %><br>
       <%= f.text_field :description, class: "form-control" %>
     </div>
-    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"></script>
+
+    <!-- STRIPE BUTTON -->
+    
+    <%= hidden_field_tag 'stripeToken' %>
+    <%= hidden_field_tag 'stripeEmail' %> 
+    <button id="thisbutton" type="button" class="btn btn-default">Pay With Card Button</button>
+    <script>
+      var handler = StripeCheckout.configure({
+        key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+        token: function(token, arg) {
+          document.getElementById("stripeToken").value = token.id;
+          document.getElementById("stripeEmail").value = token.email;
+          document.getElementById("new_app").submit();
+        }
+      });
+
+      document.getElementById('thisbutton').addEventListener('click', function(e) {
+        handler.open({
+          name: 'Silicon Beach App Awards',
+          description: 'One App Nomination ($149.99)',
+          amount: 500
+        });
+        e.preventDefault();
+      })
+    </script>
   <% end %>
 </div>
