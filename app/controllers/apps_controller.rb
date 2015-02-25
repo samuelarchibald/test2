@@ -25,9 +25,6 @@ class AppsController < ApplicationController
   def create
     @app = current_user.apps.build(app_params)
 
-    # Amount in cents
-    @amount = 500
-
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :card  => params[:stripeToken]
@@ -40,9 +37,23 @@ class AppsController < ApplicationController
       :currency    => 'usd'
     )
 
+    nomination = Nomination.create(
+      name: params[:name],
+      store: params[:store],
+      url: params[:url],
+      description: params[:description],
+      stripe_description: charge.description,
+      email: params[:stripeEmail],
+      amount: params[:amount],
+      currency: charge.currency,
+      customer_id: customer.id,
+      card: params[:stripeToken],
+      product_id: 1
+    )
+
     respond_to do |format|
       if @app.save
-        format.html { redirect_to @app, notice: 'App was successfully created.' }
+        format.html { redirect_to nomination, notice: 'App was successfully created.' }
         format.json { render :show, status: :created, location: @app }
       else
         format.html { render :new }
