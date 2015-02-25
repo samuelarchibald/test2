@@ -39,7 +39,8 @@
     <!-- STRIPE BUTTON -->
     
     <%= hidden_field_tag 'stripeToken' %>
-    <%= hidden_field_tag 'stripeEmail' %> 
+    <%= hidden_field_tag 'stripeEmail' %>
+    <%= hidden_field_tag 'amount', 499 %> 
     <button id="thisbutton" type="button" class="btn btn-default">Pay With Card Button</button>
     <script>
       var handler = StripeCheckout.configure({
@@ -55,7 +56,7 @@
         handler.open({
           name: 'Silicon Beach App Awards',
           description: 'One App Nomination ($149.99)',
-          amount: 500
+          amount: document.getElementById("amount").value
         });
         e.preventDefault();
       })
