@@ -1,34 +1,25 @@
 <div class="container down">
-
-<p>
-  <strong>Name:</strong>
-  <%= @app.name %>
-</p>
-
-<p>
-  <strong>Store:</strong>
-  <%= @app.store %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @app.url %>
-</p>
-
-<p>
-  <%= image_tag @app.image.url(:medium) %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @app.description %>
-</p>
-
-
-<% if @app.user == current_user %>
-	<%= link_to 'Edit', edit_app_path(@app) %> |
-<% end %>
-
-	<%= link_to 'Back', apps_path %>
-
+  <p>
+    <strong>Name:</strong>
+    <%= @app.name %>
+  </p>
+  <p>
+    <strong>Store:</strong>
+    <%= @app.store %>
+  </p>
+  <p>
+    <strong>Url:</strong>
+    <%= @app.url %>
+  </p>
+  <p>
+    <%= image_tag @app.image.url(:medium) %>
+  </p>
+  <p>
+    <strong>Description:</strong>
+    <%= @app.description %>
+  </p>
+  <% if @app.user == current_user %>
+  	<%= link_to 'Edit', edit_app_path(@app) %> |
+  <% end %>
+  	<%= link_to 'Back', apps_path %>
 </div>

@@ -25,6 +25,21 @@ class AppsController < ApplicationController
   def create
     @app = current_user.apps.build(app_params)
 
+    # Amount in cents
+    @amount = 500
+
+    customer = Stripe::Customer.create(
+      :email => 'example@stripe.com',
+      :card  => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'usd'
+    )
+
     respond_to do |format|
       if @app.save
         format.html { redirect_to @app, notice: 'App was successfully created.' }
@@ -34,6 +49,9 @@ class AppsController < ApplicationController
         format.json { render json: @app.errors, status: :unprocessable_entity }
       end
     end
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
   end
 
 
