@@ -17,15 +17,15 @@
 
     <div class="form-group">
       <%= f.label :name %><br>
-      <%= f.text_field :name, class: "form-control" %>
+      <%= f.text_field :name, class: "form-control", id: 'nameField' %>
     </div>
     <div class="form-group">
       <%= f.label :store %><br>
-      <%= f.text_field :store, class: "form-control" %>
+      <%= f.text_field :store, class: "form-control", id: 'storeField' %>
     </div>
     <div class="form-group">
       <%= f.label :url %><br>
-      <%= f.text_field :url, class: "form-control" %>
+      <%= f.text_field :url, class: "form-control", id: 'urlField' %>
     </div>
     <div class="form-group">
       <%= f.label :image %><br>
@@ -33,14 +33,18 @@
     </div>
     <div class="form-group">
       <%= f.label :description %><br>
-      <%= f.text_field :description, class: "form-control" %>
+      <%= f.text_field :description, class: "form-control", id: 'descriptionField' %>
     </div>
 
-    <!-- STRIPE BUTTON -->
+    <!-- STRIPE AND NOMINATIONS RECIPT PROCESSING -->
     
     <%= hidden_field_tag 'stripeToken' %>
     <%= hidden_field_tag 'stripeEmail' %>
-    <%= hidden_field_tag 'amount', 499 %> 
+    <%= hidden_field_tag 'amount', 499 %>
+    <%= hidden_field_tag 'appName' %>
+    <%= hidden_field_tag 'appStore' %>
+    <%= hidden_field_tag 'appUrl' %>
+    <%= hidden_field_tag 'appDescription' %>
     <button id="thisbutton" type="button" class="btn btn-default">Pay With Card Button</button>
     <script>
       var handler = StripeCheckout.configure({
@@ -53,6 +57,12 @@
       });
 
       document.getElementById('thisbutton').addEventListener('click', function(e) {
+
+        document.getElementById("appName").value = document.getElementById("nameField").value
+        document.getElementById("appStore").value = document.getElementById("storeField").value
+        document.getElementById("appUrl").value = document.getElementById("urlField").value
+        document.getElementById("appDescription").value = document.getElementById("descriptionField").value
+
         handler.open({
           name: 'Silicon Beach App Awards',
           description: 'One App Nomination ($149.99)',

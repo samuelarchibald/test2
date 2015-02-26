@@ -38,17 +38,18 @@ class AppsController < ApplicationController
     )
 
     nomination = Nomination.create(
-      name: params[:name],
-      store: params[:store],
-      url: params[:url],
-      description: params[:description],
+      name: params[:appName],
+      store: params[:appStore],
+      url: params[:appUrl],
+      description: params[:appDescription],
       stripe_description: charge.description,
       email: params[:stripeEmail],
       amount: params[:amount],
       currency: charge.currency,
       customer_id: customer.id,
       card: params[:stripeToken],
-      product_id: 1
+      product_id: 1,
+      uuid: SecureRandom.uuid
     )
 
     respond_to do |format|

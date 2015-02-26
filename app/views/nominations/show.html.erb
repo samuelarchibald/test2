@@ -1,3 +1,13 @@
-<p>This is your purchase!!!</p>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p>Your purchase is <%= @nomination.inspect %></p>
+<br><br><br><br><br><br><br>
+
+<p>
+	Congratulations! Your app <%= @nomination.name %> was sucessfully nominated. We have emailed you a receipt.
+</p>
+
+<p>Reciept:</p>
+<p>App Name : <%= @nomination.name %></p>
+<p>App Store : <%= @nomination.store %></p>
+<p>App URL : <%= @nomination.url %></p>
+<p>App Description : <%= @nomination.description %></p>
+
+<p>We sent this to  <%= @nomination.email %> if that isn't your email adress, then lol</p>

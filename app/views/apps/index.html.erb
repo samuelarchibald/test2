@@ -4,11 +4,10 @@
     <div class="box panel panel-default">
       <%= image_tag app.image.url(:medium) %>
       <div class="panel-body">
-        <%= app.name %>
-        <%= app.user.email if app.user %>
-        <%= app.store %>
-        <%= app.url %>
-        <%= app.description %>
+        <p><%= app.name %></p>
+        <p><%= app.store %></p>
+        <p><%= app.url %></p>
+        <p><%= app.description %></p>
       </div>
       <div class="panel-footer">
         <%= link_to 'Show', app %>

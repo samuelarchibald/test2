@@ -1,0 +1,11 @@
+<% @nominations.each do |n| %>
+	<div class="panel panel-default">
+		<div class="panel-body">
+        <p><%= n.name %></p>
+        <p><%= n.store %></p>
+        <p><%= n.url %></p>
+        <p><%= n.description %></p>
+        <%= link_to 'Show', n %>
+      </div>
+	</div>
+<% end %>
