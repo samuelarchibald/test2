@@ -45,7 +45,7 @@
     <%= hidden_field_tag 'appStore' %>
     <%= hidden_field_tag 'appUrl' %>
     <%= hidden_field_tag 'appDescription' %>
-    <button id="thisbutton" type="button" class="btn btn-default">Pay With Card Button</button>
+    <button id="thisbutton" type="button" class="btn btn-default">Pay With Card!</button>
     <script>
       var handler = StripeCheckout.configure({
         key: '<%= Rails.configuration.stripe[:publishable_key] %>',

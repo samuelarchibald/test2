@@ -24,48 +24,53 @@ class AppsController < ApplicationController
 
   def create
     @app = current_user.apps.build(app_params)
+    charge_error = nil
 
-    customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :card  => params[:stripeToken]
-    )
+    if @app.valid?
+      begin
+        customer = Stripe::Customer.create(
+          :email => params[:stripeEmail],
+          :card  => params[:stripeToken]
+        )
 
-    charge = Stripe::Charge.create(
-      :customer    => customer.id,
-      :amount      => params[:amount],
-      :description => 'App Nomination',
-      :currency    => 'usd'
-    )
+        charge = Stripe::Charge.create(
+          :customer    => customer.id,
+          :amount      => params[:amount],
+          :description => 'App Nomination',
+          :currency    => 'usd'
+        )
 
-    nomination = Nomination.create(
-      name: params[:appName],
-      store: params[:appStore],
-      url: params[:appUrl],
-      description: params[:appDescription],
-      stripe_description: charge.description,
-      email: params[:stripeEmail],
-      amount: params[:amount],
-      currency: charge.currency,
-      customer_id: customer.id,
-      card: params[:stripeToken],
-      product_id: 1,
-      uuid: SecureRandom.uuid
-    )
-
-    respond_to do |format|
-      if @app.save
-        format.html { redirect_to nomination, notice: 'App was successfully created.' }
-        format.json { render :show, status: :created, location: @app }
-      else
-        format.html { render :new }
-        format.json { render json: @app.errors, status: :unprocessable_entity }
+        nomination = Nomination.create(
+          name: params[:appName],
+          store: params[:appStore],
+          url: params[:appUrl],
+          description: params[:appDescription],
+          stripe_description: charge.description,
+          email: params[:stripeEmail],
+          amount: params[:amount],
+          currency: charge.currency,
+          customer_id: customer.id,
+          card: params[:stripeToken],
+          product_id: 1,
+          uuid: SecureRandom.uuid,
+          user_id: current_user.id
+        )
+      rescue Stripe::CardError => e
+        charge_error = e.message
+        redirect_to charges_path
       end
+      if charge_error
+        flash[:error] = charge_error
+        render :new
+      else
+        @app.save
+        redirect_to nomination, notice: 'App was successfully created.'
+      end
+    else
+      flash[:error] = 'one or more error is your order'
+      render :new
     end
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to charges_path
   end
-
 
   def update
     respond_to do |format|
