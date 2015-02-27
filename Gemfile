@@ -18,13 +18,14 @@ gem 'aws-sdk', '< 2.0'
 gem 'masonry-rails', "~> 0.2.0"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
+gem 'letter_opener', group: :development
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
-  gem 'letter_opener'
+
 end
 
 group :production do
