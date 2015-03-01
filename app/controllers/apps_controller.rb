@@ -3,7 +3,6 @@ class AppsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
 
-
   def index
     @apps = App.all.reverse
   end
@@ -25,7 +24,6 @@ class AppsController < ApplicationController
   def create
     @app = current_user.apps.build(app_params)
     charge_error = nil
-
     if @app.valid?
       begin
         customer = Stripe::Customer.create(

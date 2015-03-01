@@ -1,25 +1,25 @@
-<div class="container down">
-  <p>
-    <strong>Name:</strong>
-    <%= @app.name %>
-  </p>
-  <p>
-    <strong>Store:</strong>
-    <%= @app.store %>
-  </p>
-  <p>
-    <strong>Url:</strong>
-    <%= @app.url %>
-  </p>
-  <p>
-    <%= image_tag @app.image.url(:medium) %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @app.description %>
-  </p>
+<div class="container down app-show">
+  <div class="panel panel-custom">
+    <div class="top-image">
+      <%= image_tag @app.image.url %>
+    </div>
+    <div class="title">
+      <h1><%= @app.name %></h1>
+    </div>
+     
+
+    Store:<%= @app.store %>
+
+    Url:<%= @app.url %>
+
+    Description:<%= @app.description %>
+
   <% if @app.user == current_user %>
-  	<%= link_to 'Edit', edit_app_path(@app) %> |
+    <%= link_to 'Edit', edit_app_path(@app) %> |
   <% end %>
-  	<%= link_to 'Back', apps_path %>
-</div>
+    <%= link_to 'Back', apps_path %>
+  </div>
+
+
+</div>   
+
