@@ -19,27 +19,33 @@
 
   <div class="new-app-info">
     <div class="form-group">
-      <%= f.text_field :name, class: "form-control", id: 'nameField', placeholder: 'App Name' %>
+      <%= f.text_field :name, class: "form-control app-name", id: 'nameField', placeholder: 'App Name' %>
+      <p class="app-name-text app-text">Please enter a name</p>
     </div>
     <div class="form-group">
-      <%= f.text_field :store, class: "form-control", id: 'storeField', placeholder: 'Store (ex. iTunes, Google Play, Windows)' %>
+      <%= f.text_field :store, class: "form-control app-store", id: 'storeField', placeholder: 'App Store' %>
     </div>
     <div class="form-group">
-      <%= text_field_tag :app_price, '', class: "form-control app-price", id: 'storeField', placeholder: 'App Price' %>
+      <%= text_field_tag :app_price, '', class: "form-control app-price", id: 'price-field' , placeholder: 'App Price' %>
+      <p class="app-price-text app-text">We will add this on to your price, since we will have to download it.</p>
     </div>
     <div class="form-group">
-      <%= f.text_field :url, class: "form-control", id: 'urlField', placeholder: 'App URL (ex. http://itunes.com/us/app/app-name)' %>
+      <%= f.text_field :url, class: "form-control app-url", id: 'urlField', placeholder: 'App URL (ex. http://itunes.com/us/app/app-name)' %>
+      <p class="app-url-text app-text">Uh oh! This must be a link, starting with http:// or https://</p>
     </div>
     <div class="form-group">
-      <%= f.label :image %><br>
+      <%= f.label :image, class: 'text-center'%><br>
       <%= f.file_field :image, class: "form-control form-image-control" %>
     </div>
     <div class="form-group">
-      <%= f.text_field :description, class: "form-control", id: 'descriptionField', placeholder: 'Description' %>
+      <%= f.text_area :description, class: "form-control app-description", id: 'descriptionField', placeholder: 'Description' %>
     </div>
 
     <div class="new-app-button">
       Next Step
+    </div>
+    <div class="new-app-button hidden" id="thisbutton">
+      Pay With Card!
     </div>
   </div>
   <!-- STRIPE AND NOMINATIONS RECIPT PROCESSING -->
@@ -54,10 +60,15 @@
 
   <% if @app.id == nil && 2 == 4 %>
   <div class="stripe-button">
-    <button id="thisbutton" type="button" class="btn btn-default">Pay With Card!</button>
+    <button type="button" class="btn btn-default">Pay With Card!</button>
   </div>
     <%= f.submit %>
   <% end %>
+
+
+
+  
+
 
   <!-- STRIPE JAVASCRIPT -->
   <script>

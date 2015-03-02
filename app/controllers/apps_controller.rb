@@ -42,7 +42,7 @@ class AppsController < ApplicationController
           name: params[:appName],
           store: params[:appStore],
           url: params[:appUrl],
-          description: params[:appDescription],
+          description: 'nil',
           stripe_description: charge.description,
           email: params[:stripeEmail],
           amount: params[:amount],

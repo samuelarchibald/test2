@@ -5,15 +5,13 @@
     </div>
     <div class="title">
       <h1><%= @app.name %></h1>
+      <div class="link">
+        <%= link_to 'APP STORE LINK', @app.url %>
+      </div>
     </div>
-     
-
     Store:<%= @app.store %>
 
-    Url:<%= @app.url %>
-
-    Description:<%= @app.description %>
-
+    
   <% if @app.user == current_user %>
     <%= link_to 'Edit', edit_app_path(@app) %> |
   <% end %>
