@@ -3,12 +3,27 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
+
+
+
 $ ->
 	# variables
-	appName = $('.app-name').val()
-	appPrice = $('.app-price').val()
 	AppUrl = false
 	clicked = false
+
+	shakeButton = ->
+		$('.initial-new-app-button').effect('shake', distance:7, times:3, 500)
+
+	highlightError = (div) ->
+		$(div).animate {
+		    'borderColor': '#ff0000'
+		  }, 500, ->
+		    # Animation complete.
+	unhighlightError = (div) ->
+		$(div).animate {
+		    'borderColor': 'inherit'
+		  }, 500, ->
+		    # Animation complete.
 
 	$('.app-price').click ->
 		$('.app-price-text').animate {
@@ -50,10 +65,33 @@ $ ->
 			  }, 500, ->
 			    # Animation complete.
 	$('.new-app-button').click ->
-		if (AppUrl == true) and (clicked == false)
+		appName = $('.app-name').val()
+		appPrice = $('.app-price').val()
+		appStore = $('.app-store').val()
+		name = $('.app-name')
+		price = $('.app-price')
+		store = $('.app-store')
+		url = $('.app-url')
+		if (AppUrl == true) and (clicked == false) and (appName != '') and (appPrice != '') and (appStore != '')
 			$('.new-app-button').toggleClass('hidden')
 			clicked = true
-		elsif (clicked == true)
-			#do nothing
-
+		else
+			shakeButton()
+			if (appName == '')
+				highlightError(name)
+			else
+				unhighlightError(name)
+			if (appPrice == '')
+				highlightError(price)
+			else
+				unhighlightError(price)
+			if (appStore == '')
+				highlightError(store)
+			else
+				unhighlightError(store)
+			if (AppUrl == false)
+				highlightError(url)
+			else
+				unhighlightError(url)
+			
 			
