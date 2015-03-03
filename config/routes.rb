@@ -2,9 +2,13 @@ Rails.application.routes.draw do
 
   
 
+  
+
+  resources :accounts, :only => [:index]
+
   resources :apps
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   root 'home#index'
   get 'about' => 'about#index'
   get 'judging' => 'judging#index'

@@ -1,0 +1,8 @@
+
+<div class="container down">
+	<h1 class="text-center"><%= @user.company_name %></h1>
+	<p>Find me in app/views/accounts/index.html.erb</p>
+	<% @user.apps.each do |app| %>
+		<%= app.name %><br>
+	<% end %>
+</div>
