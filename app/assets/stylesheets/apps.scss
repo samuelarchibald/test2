@@ -1,3 +1,33 @@
 // Place all the styles related to the apps controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.sam-alert {
+	width:400px;
+	height:50px;
+	background-color: rgba(172, 223, 116, 0.7);
+	line-height: 50px;
+	position: absolute;
+  left: 50%;
+  top:50px;
+  margin-left: -200px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 16px;
+  .text {
+		padding-left:20px;
+		float:left;
+	}
+	.ok {
+		color: #fff;
+		position: relative;
+		left:-3px;
+		top:1px;
+		font-size:18px;
+		cursor: pointer;
+		&:hover {
+			color: #eee;
+		}
+	}
+}

@@ -20,14 +20,20 @@
   <div class="new-app-info">
     <div class="form-group">
       <%= f.text_field :name, class: "form-control app-name", id: 'nameField', placeholder: 'App Name' %>
-      <p class="app-name-text app-text">Please enter a name</p>
     </div>
     <div class="form-group">
-      <%= f.text_field :store, class: "form-control app-store", id: 'storeField', placeholder: 'App Store' %>
+      <p class="text-center third-store-text">App Store</p>
+      <div class="third-store iTunes">iTunes</div>
+      <div class="third-store Google">Google</div>
+      <div class="third-store Windows">Windows</div>
     </div>
+    <div id="noUiSlider" class="noUiSlider"></div>
     <div class="form-group">
       <%= text_field_tag :app_price, '', class: "form-control app-price", id: 'price-field' , placeholder: 'App Price' %>
-      <p class="app-price-text app-text">We will add this on to your price, since we will have to download it.</p>
+      <p class="app-price-text app-text">
+        ex. 0, 0.99, 1.99 etc.
+        <br> We will add this on to your price, since we will have to download it.</p>
+      <p class="app-price-number-text app-text">You must enter a number. For free apps, enter 0</p>
     </div>
     <div class="form-group">
       <%= f.text_field :url, class: "form-control app-url", id: 'urlField', placeholder: 'App URL (ex. http://itunes.com/us/app/app-name)' %>
@@ -38,66 +44,30 @@
       <%= f.file_field :image, class: "form-control form-image-control" %>
     </div>
     <div class="form-group">
-      <%= f.text_area :description, class: "form-control app-description", id: 'descriptionField', placeholder: 'Description' %>
+      <%= f.text_area :description, class: "form-control app-description", id: 'descriptionField', placeholder: 'Description (optional)' %>
     </div>
 
     <div class="new-app-button initial-new-app-button">
       Next Step
     </div>
-    <div class="new-app-button hidden" id="thisbutton">
-      Pay With Card!
+    <div class="new-app-button stripe-new-app-button hidden" id="thisbutton">
+      Pay With Card
     </div>
   </div>
   <!-- STRIPE AND NOMINATIONS RECIPT PROCESSING -->
 
   <%= hidden_field_tag 'stripeToken' %>
   <%= hidden_field_tag 'stripeEmail' %>
-  <%= hidden_field_tag 'amount', 499 %>
+  <%= hidden_field_tag 'amount', 14999 %>
   <%= hidden_field_tag 'appName' %>
   <%= hidden_field_tag 'appStore' %>
   <%= hidden_field_tag 'appUrl' %>
   <%= hidden_field_tag 'appDescription' %>
+  <%= f.hidden_field :store, class: 'store_field' %>
 
-  <% if @app.id == nil && 2 == 4 %>
-  <div class="stripe-button">
-    <button type="button" class="btn btn-default">Pay With Card!</button>
-  </div>
+  <% if @app.id == nil %>
+  <% else %>
     <%= f.submit %>
   <% end %>
-
-
-
-  
-
-
-  <!-- STRIPE JAVASCRIPT -->
-  <script>
-    var handler = StripeCheckout.configure({
-      key: '<%= Rails.configuration.stripe[:publishable_key] %>',
-      token: function(token, arg) {
-        document.getElementById("stripeToken").value = token.id;
-        document.getElementById("stripeEmail").value = token.email;
-        document.getElementById("new_app").submit();
-      }
-    });
-
-    document.getElementById('thisbutton').addEventListener('click', function(e) {
-
-      // inputting the forms to nomination
-      document.getElementById("appName").value = document.getElementById("nameField").value
-      document.getElementById("appStore").value = document.getElementById("storeField").value
-      document.getElementById("appUrl").value = document.getElementById("urlField").value
-      document.getElementById("appDescription").value = document.getElementById("descriptionField").value
-
-      handler.open({
-        name: 'Silicon Beach App Awards',
-        description: 'One App Nomination ($149.99)',
-        amount: document.getElementById("amount").value
-      });
-      e.preventDefault();
-    })
-  </script>
-
-
 
 <% end %>

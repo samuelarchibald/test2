@@ -7,7 +7,7 @@
     <div class="title">
       <h1><%= @app.name %></h1>
       <div class="link">
-        <%= link_to 'APP STORE LINK', @app.url, target: '_blank' %>
+        <%= link_to "#{@app.store.upcase} STORE LINK", @app.url, target: '_blank' %>
       </div>
     </div>
     
@@ -16,22 +16,23 @@
         <div class="item image-normal">
           <%= image_tag @app.image.url(:medium) %>
         </div>
-        <div class="item">
-          <div class="app-info">
-            <span>App Name: </span><%= @app.name %>     
+        <div class="item app-info-item">
+          <div class="app-info info-title">
+            <%= @app.name %><span> Free</span>   
           </div>
           <div class="app-info">
-            <span>App Store: </span><%= @app.store %>     
-          </div>
-          <div class="app-info wordwrap">
-            <span>App URL: </span><%= @app.url %>     
-          </div>
-          <div class="app-info">
-            <span>App Price: </span>Free <!-- FIX LATER -->    
+            <%= simple_format(@app.description) %>
           </div>
         </div>
+        <div class="line down-fourty"></div>
+        <div class="nominated-on down-fourty">
+          Nominated On: <%= @app.created_at.to_formatted_s(:long_ordinal) %>
+        </div>
+        <div class="line down-fourty"></div>
+        <div class="nominated-on down-fourty">
+          Awards: @app.articles
+        </div>
       </div>
-
     </div>
   </div>   
 </div>

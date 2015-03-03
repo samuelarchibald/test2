@@ -85,6 +85,30 @@
 
 
 .new-app {
+	.third-store {
+		position: relative;
+		top:-25px;
+		float:left;
+		width:31.335%;
+		text-align: center;
+		margin: 20px 1%;
+		padding: 20px 0;
+		background-color: #ccc;
+		cursor: pointer;
+		border-radius: 5px;
+		&:hover {
+			background-color: #434547;
+			color: #fff;
+		}
+	}
+	.third-store-text {
+		position: relative;
+		top: -10px;
+	}
+	.third-store-seleted {
+		background-color: #434547;
+		color: #fff;
+	}
 	.header {
 		padding-bottom: 30px;
 		h2 {
@@ -94,7 +118,7 @@
 		p {
 			padding-top: 10px;
 			font-size: 18px;
-			font-weight: 100;
+			font-weight: 300;
 			color: #000;
 		}
 	}
@@ -131,6 +155,12 @@
 							transition: background-color 250ms ease;
 			&:hover {
 				background-color: #6895CA;
+			}
+		}
+		.stripe-new-app-button {
+			background-color: #20d938;
+			&:hover {
+				background-color: #1fc329;
 			}
 		}
 		.title {
@@ -203,6 +233,9 @@
 	.wordwrap { 
 	   word-wrap: break-word;      /* IE */
 	}
+	.app-info-item {
+		width:70%;
+	}
 	.up {
 		position: relative;
 		top: -170px;
@@ -213,33 +246,60 @@
 				width:250px;
 				img {
 					width:100%;
-					padding-right: 10px;
-					border-right: 2px solid #000;
+					padding-right: 20px;
 				}
 			}
 			.item {
 				float:left;
 				.app-info {
-					padding: 0 0 20px 10px;
+					padding: 0 0 0px 13px;
+					border-left: 4px solid #B7B7B7;
+					color: #5C5C5C;
+					font-size: 18px;
+					font-weight: 300;
+					line-height: 33px;
 				}
+				.info-title {
+						font-size: 24px;
+						color: #5C5C5C;
+						span {
+							padding-left: 5px;
+							font-size: 18px;
+							color: #6FD400;
+						}
+				}
+			}
+			.down-fourty {
+				position: relative;
+				top:40px;
+			}
+			.line {
+				clear:both;
+				width:100%;
+				height:2px;
+				background-color:rgba(0,0,0,0.1);
+				border-radius: 1px;
+			}
+			.nominated-on {
+				margin-top: 20px;
+				margin-bottom: 20px;
 			}
 		}
 		@media (max-width: 760px) {
-		top:-100px;
+			top:-100px;
 		}
 		@media (max-width: 400px) {
-		top:-140px;
+			top:-140px;
 			img {
 				margin: 0 auto;
 			}
 		}
 	}
 	.panel-custom{
-		border-radius: 8px;
+		border-radius: 14px;
 	}
 	.top-image {
-		border-top-left-radius: 8px;
-			border-top-right-radius: 8px;
+		border-radius: 14px;
 		height:400px;
 		@media (max-width: 760px) {
 			height:300px;
