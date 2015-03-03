@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'about' => 'about#index'
   get 'judging' => 'judging#index'
-  get 'winners' => 'winners#index'
+
   get 'home/stand_out' => 'home#stand_out'
 
-
   resources :nominations, :only => [:index, :show]
+
+  resources :winners, :only => [:index] do
+    #do something
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
