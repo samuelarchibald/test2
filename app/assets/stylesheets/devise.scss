@@ -1,0 +1,87 @@
+.devise-container {
+	max-width:440px;
+	margin: 0 auto;
+	text-align: center;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.35);
+	border-radius: 19px;
+}
+
+.devise-container {
+	.title {
+		padding:20px 0;
+	}
+}
+
+
+
+.devise-container {
+	input[type=text],input[type=email],input[type=password], {
+   		/* Rectangle 103: */
+   		max-width: 400px;
+   		margin: 10px auto;
+   		background: #C9C9C9;
+   		box-shadow: inset 0px 1px 3px 0px rgba(0,0,0,0.11);
+   		height:40px;
+   		font-size: 18px;
+   		color: #FFFFFF;
+   		line-height: 18px;
+   		border-radius: 0px;
+   		font-weight: 300;
+   		&::placeholder {
+   			font-weight: 300;
+   			font-size: 18px;
+   			color: #FFFFFF;
+   			line-height: 18px;
+   		}	
+		}
+}
+
+
+.devise-container {
+	.action-button {
+		width:230px;
+		height:40px;
+		/* Rectangle 664: */
+		background-color: #6DA2E0;
+		border-radius: 3px;
+		font-size: 20px;
+		color: #FFFFFF;
+		line-height: 40px;
+		text-align: center;
+		margin: 0 auto;
+		font-weight: 300;
+		cursor: pointer;
+		-ms-transition: background-color 250ms ease;
+		-webkit-transition: background-color 250ms ease;
+						transition: background-color 250ms ease;
+		&:hover {
+			background-color: #6895CA;
+		}
+	}
+}
+
+.devise-container {
+	.footer {
+		margin-top: 30px;
+		background: #E4E4E4;
+		height:50px;
+		border-bottom-left-radius: 19px;
+		border-bottom-right-radius: 19px;
+		text-align: left;
+		line-height: 50px;
+		padding: 0 20px;
+		/* Log In: */
+		opacity: 0.56;
+		color: #4A90E2;
+		font-size: 18px;
+		.link-left {
+			display: inline-block;
+			float:left;
+		}
+		.link-right {
+			display: inline-block;
+			float:right;
+		}
+	}
+}
