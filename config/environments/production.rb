@@ -89,6 +89,11 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
+  
 
+  config.assets.precompile += 
+  %w( #{Rails.root}/vendor/assets/stylesheets/active_admin.css.scss)
+  config.assets.precompile += 
+  %w( #{Rails.root}/vendor/assets/javascripts/active_admin.js.coffee)
 
 end
