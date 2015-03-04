@@ -18,6 +18,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
 gem 'letter_opener', group: :development
 gem 'jquery-ui-rails'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :development, :test do
   gem 'byebug'
