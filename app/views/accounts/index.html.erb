@@ -1,8 +1,49 @@
 
 <div class="container down">
 	<h1 class="text-center"><%= @user.company_name %></h1>
-	<p>Find me in app/views/accounts/index.html.erb</p>
+	<p>My Nominations</p>
+	<div class="overall-container">
 	<% @user.apps.each do |app| %>
-		<%= app.name %><br>
+		<div class="col-sm-6 col-lg-3 col-md-4">
+		  <div class="app-container">
+		    <div class="img-container">
+		      <%= link_to image_tag(app.image.url(:medium)), app, id: 'app-image' %>
+		    </div>
+		    <div class="caption">
+		      <div class="name text-center">
+		        <h3><%= app.name %></h3>
+		      </div>
+		      <div class="blue-bg">
+		        <div class="half">
+		          <div class="title">
+		            Store:
+		          </div>
+		          <div class="info">
+		            <%= app.store %>
+		          </div>
+		        </div>
+		        <div class="half">
+		          <div class="title">
+		            Price:
+		          </div>
+		          <div class="price">
+		            Free!
+		          </div>
+		        </div>
+		        <div class="app-link">
+		          <%= link_to 'App Store Link', app.url, target: '_blank' %>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	<% end %>
+	<div class="col-sm-6 col-lg-3 col-md-4">
+	  <div class="app-container">
+	  	<div class="center">
+	  		<%= link_to 'New App', new_app_path %>
+	  	</div>
+	  </div>
+	</div>
+</div>
 </div>
