@@ -347,3 +347,33 @@
 			}
 		}
 }
+
+
+
+
+
+
+
+.staff-pick {
+	z-index: 1000;
+	text-align: right;
+	position:absolute;
+	top:20px;
+	right:23px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 80px 80px 0;
+	border-color: transparent #F4E528 transparent transparent;
+	p {
+		color: #68632E;
+		text-align: right;
+		position:relative;
+		left:45px;
+		line-height: 15px;
+		font-size: 15px;
+				-ms-transform: rotate(45deg); /* IE 9 */
+		-webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+		    		transform: rotate(45deg);
+	}
+}
