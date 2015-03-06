@@ -49,7 +49,7 @@
 		color: #FFFFFF;
 		line-height: 40px;
 		text-align: center;
-		margin: 0 auto;
+		margin: 20px auto;
 		font-weight: 300;
 		cursor: pointer;
 		-ms-transition: background-color 250ms ease;
@@ -63,7 +63,7 @@
 
 .devise-container {
 	.footer {
-		margin-top: 30px;
+		margin-top: 15px;
 		background: #E4E4E4;
 		height:50px;
 		border-bottom-left-radius: 19px;
@@ -82,6 +82,55 @@
 		.link-right {
 			display: inline-block;
 			float:right;
+			cursor: pointer;
+		}
+	}
+}
+
+
+.devise-container {
+	.new-password {
+		height:35px;
+		overflow:hidden;
+	}
+	.new-password-button {
+		display:block;
+		width:200px;
+		height:35px;
+		line-height: 35px;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+}
+
+
+.devise-container {
+	.cancel-account {
+		.confirm {
+			height:0px;
+			overflow: hidden;
+			.yes {
+
+			}
+		}
+	}
+
+	.cancel-account-button {
+		padding-top:30px;
+		cursor: pointer;
+	}
+}
+
+
+
+.devise-container {
+	.current-password {
+		height: 0;
+		overflow: hidden;
+		.label {
+			font-size: 14px;
+			color: #ccc;
+			font-weight: 300;
 		}
 	}
 }

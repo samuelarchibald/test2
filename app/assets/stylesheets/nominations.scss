@@ -1,0 +1,36 @@
+.nomination-container {
+			margin: 20px 0;
+	.bar {
+		height:58px;
+		background: #E4E4E4;
+		box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.15);
+		line-height: 58px;
+		padding: 0 20px;
+		cursor: pointer;
+		z-index: 2;
+		color: #4A90E2;
+		font-size: 18px;
+	}
+	.open-bar {
+		z-index: -1;
+		width:95%;
+		margin: 0 auto;
+		height:0;
+		overflow: hidden;
+		background-color: rgba(188,188,188,0.11);
+	}
+}
+
+
+.nomination-container {
+	.open-bar {
+		.store {
+			padding-top: 20px;
+		}
+		.text {
+			color: #737373;
+			font-size: 18px;
+			padding: 5px 10px;
+		}
+	}
+}

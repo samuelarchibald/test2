@@ -1,11 +1,20 @@
-<% @nominations.each do |n| %>
-	<div class="panel panel-default">
-		<div class="panel-body">
-        <p><%= n.name %></p>
-        <p><%= n.store %></p>
-        <p><%= n.url %></p>
-        <p><%= n.description %></p>
-        <%= link_to 'Show', n %>
-      </div>
+<div class="container down">
+
+	<div class="title">
+		<h2>My Nominations</h2>
 	</div>
-<% end %>
+
+	<% @nominations.each do |n| %>
+		<div class="nomination-container">
+			<div class="bar">
+				<div class="left"><%= n.name %></div>
+				<div class="right"><%= n.created_at.to_formatted_s(:short) %></div>
+			</div>
+		  <div class="open-bar">
+		  	<div class="text store"><%= n.store %></div>
+		  	<div class="text url"><%= n.url %></div>
+		  	<div class="text description"><%= n.description %></div>
+		  </div>
+		</div>
+	<% end %>
+</div>

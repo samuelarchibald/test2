@@ -1,18 +1,16 @@
 .overall-container{
 	.app-container {
 		text-align: center;
-		.col-xs-12{
-			margin: 0 auto;
-		}
-		margin: 0 auto;
+		margin: 20px auto;
 		border: 1px solid #ccc;
 		border-radius: 8px;
-		margin: 20px;
 		min-width:227px;
 		height:377px;
 		width:227px;
 		-webkit-transition: all 500ms ease;
 		transition: all 500ms ease;
+		position: relative;
+		overflow: hidden;
 		&:hover {
 			border: 1px solid #4A9DFF;
 		}
@@ -358,8 +356,8 @@
 	z-index: 1000;
 	text-align: right;
 	position:absolute;
-	top:20px;
-	right:23px;
+	top:0px;
+	right:0px;
 	width: 0;
 	height: 0;
 	border-style: solid;

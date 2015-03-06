@@ -1,0 +1,31 @@
+
+
+nominationClick = ->
+	open = false
+	$('.nomination-container').click ->
+		if (!open)
+			$(this).children('.open-bar').animate {
+				height: 300
+			}, 500, ->
+				open = true
+		else 
+			$(this).children('.open-bar').animate {
+				height: 0
+			}, 500, ->
+				open = false
+
+
+
+
+
+
+
+
+
+
+$ ->
+	nominationClick()
+
+
+
+
