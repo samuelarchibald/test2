@@ -1,0 +1,22 @@
+.sb-nav-link {
+	margin: 0 5px;
+}
+
+
+.sb-nav-link:before {
+	content: '';
+	background-color: #000 ;
+	height:0px;
+	width:2px;
+	position: absolute;
+	top:15px;
+	left:8px;
+	transition: all 0.5s ease;
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}
+
+.sb-nav-link:hover:before {
+	height:20px;
+
+}

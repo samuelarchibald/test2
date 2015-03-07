@@ -8,15 +8,16 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'Home', root_path, class: "navbar-brand active" %>
+      <%= link_to 'SBAA', root_path, class: "navbar-brand active" %>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'About', about_path %></li>
-        <li><%= link_to 'Nominations', apps_path %></li>
-        <li><%= link_to 'Judging', judging_path %></li>
-        <li><%= link_to 'Winners', winners_path %></li>
+        <li><%= link_to 'Home', root_path, class: 'sb-nav-link nav-link-home' %></li>
+        <li><%= link_to 'About', about_path, class: 'sb-nav-link nav-link-about' %></li>
+        <li><%= link_to 'Nominations', apps_path, class: 'sb-nav-link nav-link-nom' %></li>
+        <li><%= link_to 'Judging', judging_path, class: 'sb-nav-link nav-link-judge' %></li>
+        <li><%= link_to 'Winners', winners_path, class: 'sb-nav-link nav-link-winners' %></li>
       </ul>
 
 
