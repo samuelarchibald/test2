@@ -26,11 +26,13 @@
         </div>
         <div class="line down-fourty"></div>
         <div class="nominated-on down-fourty">
-          Nominated On: <%= @app.created_at.to_formatted_s(:long_ordinal) %>
+          <div class="nom-title">Nominated On:</div>
+           <div class="content"><%= @app.created_at.to_formatted_s(:long_ordinal) %></div>
         </div>
         <div class="line down-fourty"></div>
         <div class="nominated-on down-fourty">
-          Awards: @app.articles
+          <div class="nom-title">Awards:</div>
+          <div class="content">@app.articles</div>
         </div>
       </div>
     </div>
