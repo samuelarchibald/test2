@@ -19,6 +19,8 @@ gem 'figaro'
 gem 'letter_opener', group: :development
 gem 'jquery-ui-rails'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug'

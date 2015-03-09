@@ -44,4 +44,7 @@
       </div>
     <% end %>
   </div>
+  <div class="pagination col-md-12 text-center">
+    <%= will_paginate @apps, class: 'sam-pagination', renderer: BootstrapPagination::Rails %>
+  </div>
 </div>

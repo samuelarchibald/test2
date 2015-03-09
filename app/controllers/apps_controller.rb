@@ -4,7 +4,7 @@ class AppsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
 
   def index
-    @apps = App.all.reverse
+    @apps = App.all.paginate(:page => params[:page], :per_page => 8).order(created_at: :desc)
   end
 
 
