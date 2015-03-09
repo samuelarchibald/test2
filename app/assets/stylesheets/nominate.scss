@@ -8,11 +8,13 @@
 		height:377px;
 		width:227px;
 		-webkit-transition: all 500ms ease;
-		transition: all 500ms ease;
+		transition: all 200ms ease;
 		position: relative;
 		overflow: hidden;
+		box-shadow: 0px 2px 26px 0px rgba(0,0,0,0.11);
 		&:hover {
-			border: 1px solid #4A9DFF;
+			// border: 1px solid #4A9DFF;
+			box-shadow: -12px 23px 40px 0px rgba(0,0,0,0.10);
 		}
 		.img-container {
 			height:227px;
@@ -375,3 +377,7 @@
 		    		transform: rotate(45deg);
 	}
 }
+
+
+
+

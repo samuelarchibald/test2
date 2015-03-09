@@ -13,18 +13,18 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', root_path, class: 'sb-nav-link nav-link-home' %></li>
-        <li><%= link_to 'About', about_path, class: 'sb-nav-link nav-link-about' %></li>
-        <li><%= link_to 'Nominations', apps_path, class: 'sb-nav-link nav-link-nom' %></li>
-        <li><%= link_to 'Judging', judging_path, class: 'sb-nav-link nav-link-judge' %></li>
-        <li><%= link_to 'Winners', winners_path, class: 'sb-nav-link nav-link-winners' %></li>
+        <li><%= link_to 'Home', root_path, class: 'sb-nav-link' %></li>
+        <li><%= link_to 'About', about_path, class: 'sb-nav-link' %></li>
+        <li><%= link_to 'Nominations', apps_path, class: 'sb-nav-link' %></li>
+        <li><%= link_to 'Judging', judging_path, class: 'sb-nav-link' %></li>
+        <li><%= link_to 'Winners', winners_path, class: 'sb-nav-link' %></li>
       </ul>
 
 
 
       <ul class="nav navbar-nav navbar-right">
 
-        <li><%= link_to 'Nominate My App', new_app_path %></li>
+        <li><%= link_to 'Nominate My App', new_app_path, class: 'sb-nav-link sb-nav-nominate' %></li>
 
         <% if user_signed_in? %>
           <li class="dropdown">
