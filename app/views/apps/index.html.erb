@@ -1,12 +1,13 @@
 
 <div class="container down">
+  <h2 class="text-center">Recently Nominated</h2>
   <div class="overall-container">
     <% @apps.each do |app| %>
       <div class="col-sm-6 col-lg-3 col-md-4">
         <div class="app-container">
-          <div class="staff-pick">
+          <!-- <div class="staff-pick">
             <p>Staff<br> Pick</p>
-          </div>
+          </div> -->
           <div class="img-container">
             <%= link_to image_tag(app.image.url(:medium)), app, id: 'app-image' %>
           </div>
