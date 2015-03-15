@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable   
   has_many :apps, dependent: :destroy
   has_many :nominations, dependent: :destroy
+  validates :company_name, :presence => true
 end

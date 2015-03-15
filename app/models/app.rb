@@ -11,8 +11,8 @@ class App < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
 	def slug
-    name.downcase.gsub(" ", "-")  
-  end
+    	name.downcase.gsub(" ", "-")  
+  	end
 
 	def to_param
 		"#{id}-#{slug}"

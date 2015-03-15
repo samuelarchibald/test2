@@ -13,6 +13,8 @@ animate_div_height = (div, height) ->
 		    height: height
 		  }, 500, ->
 
+
+
 log_in = ->
 	#variables
 	log_in_button = $('.log-in-button')
@@ -65,18 +67,25 @@ edit_account = ->
 			animate_div_height(confirm_password_input, 70)
 			attempted_submit = true
 			confirm_password_input.keypress (event) ->
-			  if event.which == 13
-			    event.preventDefault()
-			    edit_user_form.submit()
+				if event.which == 13
+					event.preventDefault()
+					edit_user_form.submit()
 		else
 			edit_user_form.submit()
+
+sign_up = ->
+	$('.sign_up_button').click ->
+		$('.new_user').submit();
+	$('.sign_up_confirmation').keypress (event) ->
+		if event.which == 13
+			event.preventDefault()
+			$('.new_user').submit();
 
 
 
 $ ->
 	log_in()
 	edit_account()
-
-
+	sign_up()
 
 	
